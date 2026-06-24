@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کافه زعفران | منوی دیجیتال مدرن</title>
+  <meta name="description" content="منوی دیجیتال کافه زعفران - تجربه‌ای بی‌نظیر از طعم‌های اصیل و نوشیدنی‌های زعفرانی در فضایی دلنشین">
+  
+  <!-- Font Pairing: Lalezar (Headings) & Vazirmatn (Body & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light">
+
+  <!-- Background decorative elements for premium visual depth -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Navigation Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="logo-wrapper">
+          <i data-lucide="coffee" class="logo-icon"></i>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-name">کافه زعفران</h1>
+          <span class="brand-tagline">طعم اصیل اصالت</span>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <!-- Search Button (Toggles Search Bar) -->
+        <div class="search-wrapper">
+          <input type="text" id="menu-search" placeholder="جستجوی نوشیدنی یا دسر..." aria-label="جستجو">
+          <i data-lucide="search" class="search-icon"></i>
+        </div>
+        
+        <!-- Light / Dark Mode Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="تغییر پوسته">
+          <i data-lucide="moon" class="theme-icon-dark"></i>
+          <i data-lucide="sun" class="theme-icon-light"></i>
+        </button>
+
+        <!-- Cart Trigger Button -->
+        <button id="cart-trigger" class="icon-btn cart-btn" aria-label="مشاهده سبد خرید">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-count">۰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge"><i data-lucide="sparkles"></i> پیشنهاد ویژه امروز</span>
+        <h2 class="hero-title">چای دمی ایرانی زعفران</h2>
+        <p class="hero-desc">ترکیبی بی‌نظیر از برگ‌های تازه چای لاهیجان به همراه زعفران سرگل قائنات، هل سبز و گلبرگ‌های گل سرخ محمدی. تجربه‌ای اصیل از مهمان‌نوازی ایرانی.</p>
+        <div class="hero-meta">
+          <span class="hero-price">۸۵,۰۰۰ تومان</span>
+          <button class="btn btn-primary" onclick="window.app.addSpecialToCart()">
+            <i data-lucide="plus"></i> سفارش سریع
+          </button>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="assets/saffron-tea.png" alt="چای زعفرانی اصیل ایرانی" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Recommendations Slider -->
+  <section class="recommendations">
+    <div class="section-header">
+      <h3 class="section-title"><i data-lucide="star"></i> محبوب‌ترین‌های زعفران</h3>
+      <p class="section-subtitle">گلچینی از پرطرفدارترین طعم‌ها به پیشنهاد سرآشپز</p>
+    </div>
+    
+    <div class="carousel-container">
+      <div class="carousel-track" id="featured-carousel">
+        <!-- Dynamic Featured Items (Saffron Latte, Baklava, Omelette) will load here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section with Filters -->
+  <section class="menu-section" id="menu-section">
+    <!-- Sticky Category Bar -->
+    <div class="category-sticky">
+      <div class="category-slider">
+        <button class="category-tab active" data-category="all">
+          <i data-lucide="layout-grid"></i> همه موارد
+        </button>
+        <button class="category-tab" data-category="hot">
+          <i data-lucide="cup-soda"></i> نوشیدنی‌های گرم
+        </button>
+        <button class="category-tab" data-category="cold">
+          <i data-lucide="glass-water"></i> نوشیدنی‌های خنک
+        </button>
+        <button class="category-tab" data-category="dessert">
+          <i data-lucide="cake"></i> دسر و شیرینی
+        </button>
+        <button class="category-tab" data-category="brunch">
+          <i data-lucide="croissant"></i> صبحانه و عصرانه
+        </button>
+      </div>
+      
+      <!-- Filter Tags -->
+      <div class="filter-tags">
+        <button class="tag-filter active" data-tag="all">همه</button>
+        <button class="tag-filter" data-tag="saffron"><i data-lucide="sparkle" class="tag-icon"></i> دارای زعفران</button>
+        <button class="tag-filter" data-tag="vegetarian">گیاهی</button>
+        <button class="tag-filter" data-tag="popular">محبوب‌ترین‌ها</button>
+        <button class="tag-filter" data-tag="gluten-free">بدون گلوتن</button>
+      </div>
+    </div>
+
+    <!-- Active Filter Summary -->
+    <div class="filter-summary" id="filter-summary" style="display: none;">
+      <span>در حال نمایش نتایج برای: <strong id="active-filter-text"></strong></span>
+      <button id="clear-filters" class="text-btn">پاک کردن فیلترها</button>
+    </div>
+
+    <!-- Menu Items Grid -->
+    <div class="menu-grid" id="menu-grid">
+      <!-- Dynamic menu cards load here -->
+    </div>
+  </section>
+
+  <!-- Interactive Map / Info Footer Area -->
+  <section class="info-section">
+    <div class="info-grid">
+      <div class="info-card map-card">
+        <div class="card-inner">
+          <h4 class="info-title"><i data-lucide="map-pin"></i> موقعیت کافه</h4>
+          <p class="info-detail">تهران، خیابان ولیعصر، روبروی پارک ملت، پلاک ۱۲</p>
+          <div class="map-mock">
+            <!-- Styling handles background pattern -->
+            <div class="map-marker">
+              <i data-lucide="map-pin"></i>
+              <span class="pulse"></span>
+            </div>
+            <span class="map-label">مسیریابی در نشان / بلد</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="info-card hours-card">
+        <div class="card-inner">
+          <h4 class="info-title"><i data-lucide="clock"></i> ساعت کاری</h4>
+          <ul class="hours-list">
+            <li><span>شنبه تا پنجشنبه:</span> <span>۸:۰۰ صبح تا ۲۳:۰۰ شب</span></li>
+            <li><span>جمعه‌ها و روزهای تعطیل:</span> <span>۹:۰۰ صبح تا ۲۴:۰۰ شب</span></li>
+          </ul>
+          <div class="wifi-info">
+            <i data-lucide="wifi"></i>
+            <div>
+              <p>اینترنت رایگان کافه زعفران</p>
+              <code>رمز عبور: ZaferanCafe2026</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card contact-card">
+        <div class="card-inner">
+          <h4 class="info-title"><i data-lucide="phone"></i> تماس و ارتباط</h4>
+          <p class="info-detail">تلفن پشتیبانی و رزرو:</p>
+          <a href="tel:02188888888" class="phone-link">۰۲۱-۸۸۸۸۸۸۸۸</a>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="اینستاگرام"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="تلگرام"><i data-lucide="send"></i></a>
+            <a href="#" class="social-icon" aria-label="واتس‌اپ"><i data-lucide="phone-call"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <p>© ۲۰۲۶ کافه زعفران. تمامی حقوق محفوظ است.</p>
+    <p class="footer-credit">طراحی شده با عشق و زعفران 💛</p>
+  </footer>
+
+  <!-- Floating Navigation Actions for Mobile -->
+  <div class="mobile-actions-bar">
+    <button class="mobile-nav-item active" onclick="document.getElementById('menu-section').scrollIntoView({behavior: 'smooth'})">
+      <i data-lucide="book-open"></i>
+      <span>منو</span>
+    </button>
+    <button class="mobile-nav-item" id="call-waiter-trigger">
+      <i data-lucide="bell"></i>
+      <span>فراخوان گارسون</span>
+    </button>
+    <button class="mobile-nav-item cart-indicator" id="mobile-cart-trigger">
+      <div class="cart-icon-wrapper">
+        <i data-lucide="shopping-bag"></i>
+        <span class="cart-count">۰</span>
+      </div>
+      <span>سبد خرید</span>
+    </button>
+  </div>
+
+  <!-- Food Item Details Modal -->
+  <div id="details-modal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modal-close-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn" aria-label="بستن"><i data-lucide="x"></i></button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamic modal content loaded via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Drawer (Slides in from Left in RTL) -->
+  <div id="cart-drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="cart-close-backdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3 class="drawer-title"><i data-lucide="shopping-bag"></i> سبد سفارش شما</h3>
+        <button id="cart-close-btn" class="icon-btn" aria-label="بستن"><i data-lucide="x"></i></button>
+      </div>
+      
+      <div class="drawer-body">
+        <!-- Table Number input -->
+        <div class="table-input-wrapper">
+          <label for="table-number"><i data-lucide="hash"></i> شماره میز شما:</label>
+          <input type="number" id="table-number" min="1" max="50" placeholder="مثلاً ۵" value="۱">
+        </div>
+        
+        <!-- Cart Items List -->
+        <div class="cart-items" id="cart-items-list">
+          <!-- Loaded dynamically -->
+        </div>
+        
+        <!-- Cart Empty State -->
+        <div class="cart-empty" id="cart-empty-state">
+          <i data-lucide="shopping-cart" class="empty-icon"></i>
+          <p>سبد سفارش شما در حال حاضر خالی است.</p>
+          <button class="btn btn-outline" id="cart-continue-shopping">بازگشت به منو</button>
+        </div>
+      </div>
+      
+      <div class="drawer-footer" id="cart-footer">
+        <div class="cart-totals">
+          <span>مجموع کل:</span>
+          <span class="total-price" id="cart-total-price">۰ تومان</span>
+        </div>
+        
+        <div class="drawer-actions">
+          <button class="btn btn-primary btn-block" id="submit-order-btn">
+            <i data-lucide="check-circle"></i> ثبت نهایی سفارش
+          </button>
+          <button class="btn btn-secondary btn-block" id="call-waiter-drawer-btn">
+            <i data-lucide="bell"></i> صدا زدن گارسون
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toasts Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Waiter Call Overlay Loader -->
+  <div id="waiter-overlay" class="overlay-loader" style="display: none;">
+    <div class="overlay-card">
+      <div class="bell-animation">
+        <i data-lucide="bell" class="bell-shaking"></i>
+      </div>
+      <h4>در حال فراخوانی گارسون...</h4>
+      <p>لطفاً شکیبا باشید، همکاران ما به زودی به میز شما مراجعه می‌کنند.</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <button class="btn btn-outline btn-sm" id="cancel-waiter-btn">انصراف</button>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div id="order-success-modal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="order-success-close-backdrop"></div>
+    <div class="modal-content success-content">
+      <div class="success-header">
+        <div class="success-icon-wrapper">
+          <i data-lucide="check" class="success-icon"></i>
+        </div>
+        <h3>سفارش شما با موفقیت ثبت شد!</h3>
+        <p>فاکتور شماره <span id="success-order-id" class="highlight">#۱۴۰۵</span></p>
+      </div>
+      <div class="success-body">
+        <div class="receipt-card">
+          <div class="receipt-row font-bold">
+            <span>میز شماره:</span>
+            <span id="receipt-table-num">۵</span>
+          </div>
+          <hr class="receipt-divider">
+          <div id="receipt-items-list" class="receipt-items">
+            <!-- Dynamic receipt items -->
+          </div>
+          <hr class="receipt-divider">
+          <div class="receipt-row font-bold text-primary">
+            <span>مبلغ قابل پرداخت:</span>
+            <span id="receipt-total-price">۰ تومان</span>
+          </div>
+        </div>
+        <p class="success-note"><i data-lucide="info"></i> سفارش شما در حال آماده‌سازی است و به زودی سرو خواهد شد.</p>
+      </div>
+      <div class="success-footer">
+        <button class="btn btn-primary btn-block" id="success-close-btn">متوجه شدم</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
